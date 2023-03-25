@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalMenu));
             btnExpedirCheque = new Button();
             btnBuscar = new Button();
             btnDeposito = new Button();
             btnFolios = new Button();
             btnReportes = new Button();
             btnLogout = new Button();
-            lblNombre = new Label();
-            lblNoCuenta = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnExpedirCheque
@@ -102,73 +99,22 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
-            // lblNombre
+            // pictureBox1
             // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(48, 25);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 6;
-            lblNombre.Text = "Nombre";
-            // 
-            // lblNoCuenta
-            // 
-            lblNoCuenta.AutoSize = true;
-            lblNoCuenta.Location = new Point(46, 60);
-            lblNoCuenta.Name = "lblNoCuenta";
-            lblNoCuenta.Size = new Size(64, 15);
-            lblNoCuenta.TabIndex = 7;
-            lblNoCuenta.Text = "No.Cuenta";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(47, 91);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 15);
-            label3.TabIndex = 8;
-            label3.Text = "No.Folio";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(693, 25);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Saldo disponible:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(678, 41);
-            label5.Name = "label5";
-            label5.Size = new Size(181, 65);
-            label5.TabIndex = 10;
-            label5.Text = "10,000";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(865, 76);
-            label6.Name = "label6";
-            label6.Size = new Size(44, 21);
-            label6.TabIndex = 11;
-            label6.Text = "Mxn";
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(273, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(354, 246);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // PrincipalMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(930, 346);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(lblNoCuenta);
-            Controls.Add(lblNombre);
+            Controls.Add(pictureBox1);
             Controls.Add(btnLogout);
             Controls.Add(btnReportes);
             Controls.Add(btnFolios);
@@ -179,8 +125,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PrincipalMenu";
             Load += PrincipalMenu_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -191,11 +137,6 @@
         private Button btnFolios;
         private Button btnReportes;
         private Button btnLogout;
-        private Label lblNombre;
-        private Label lblNoCuenta;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
+        private PictureBox pictureBox1;
     }
 }

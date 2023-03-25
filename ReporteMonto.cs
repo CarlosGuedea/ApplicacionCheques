@@ -42,7 +42,7 @@ namespace SistemaControlChequesRev2
             // Liberar recursos y eliminar instancia del formulario
             EstadoDecuenta estadoDecuenta = new EstadoDecuenta();
             estadoDecuenta.Show();
-            
+
             this.Dispose();
         }
 

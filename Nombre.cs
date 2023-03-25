@@ -15,7 +15,7 @@ namespace SistemaControlChequesRev2
         //Recuperar la variable
         public static string nombre;
         public static string busqueda;
-        
+
         public Nombre()
         {
             InitializeComponent();

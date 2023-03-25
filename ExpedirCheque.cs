@@ -39,7 +39,7 @@ namespace SistemaControlChequesRev2
             string Detalle = this.Detalle.Text;
             PrincipalMenu principalMenu = new PrincipalMenu();
             this.Close();
-            
+
 
 
             try

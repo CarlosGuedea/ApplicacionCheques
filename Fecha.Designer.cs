@@ -36,14 +36,14 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(185, 11);
+            dateTimePicker1.Location = new Point(85, 12);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(185, 51);
+            button1.Location = new Point(108, 51);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 4;
@@ -53,7 +53,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(305, 51);
+            button2.Location = new Point(228, 51);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 5;
@@ -64,7 +64,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(91, 17);
+            label1.Location = new Point(14, 17);
             label1.Name = "label1";
             label1.Size = new Size(65, 15);
             label1.TabIndex = 7;
@@ -75,7 +75,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(602, 86);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(328, 86);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);

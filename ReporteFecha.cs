@@ -27,7 +27,7 @@ namespace SistemaControlChequesRev2
             string mes = dateTimePicker1.Value.ToString("MM");
             string anio = dateTimePicker1.Value.ToString("yyyy");
 
-            Fecha1 = "'"+anio+'-'+mes+"-"+dia+"'";
+            Fecha1 = "'" + anio + '-' + mes + "-" + dia + "'";
 
             string dia2 = dateTimePicker1.Value.ToString("dd");
             string mes2 = dateTimePicker1.Value.ToString("MM");

@@ -71,6 +71,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(432, 70);
             Controls.Add(button2);
             Controls.Add(button1);

@@ -122,7 +122,7 @@ namespace SistemaControlChequesRev2
             {
                 MessageBox.Show("Por favor seleccione una opción válida.");
             }
-    }
+        }
 
         private void Buscar_Load(object sender, EventArgs e)
         {
@@ -132,22 +132,22 @@ namespace SistemaControlChequesRev2
         private void Buscar_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-                // Crear una lista auxiliar con las referencias a los formularios a cerrar
-                List<Form> formsToClose = new List<Form>();
-                foreach (Form form in Application.OpenForms)
+            // Crear una lista auxiliar con las referencias a los formularios a cerrar
+            List<Form> formsToClose = new List<Form>();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Buscar || form is Nombre || form is Fecha || form is Monto || form is Detalle || form is Folio)
                 {
-                    if (form is Buscar || form is Nombre || form is Fecha || form is Monto || form is Detalle || form is Folio)
-                    {
-                        formsToClose.Add(form);
-                    }
+                    formsToClose.Add(form);
                 }
+            }
 
-                // Iterar sobre la lista auxiliar y cerrar los formularios
-                foreach (Form form in formsToClose)
-                {
-                    form.Dispose();
-                }
-            
+            // Iterar sobre la lista auxiliar y cerrar los formularios
+            foreach (Form form in formsToClose)
+            {
+                form.Dispose();
+            }
+
 
         }
     }

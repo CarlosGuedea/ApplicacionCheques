@@ -28,71 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxBuscar = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSeleccion = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            cbxBuscar = new ComboBox();
+            label1 = new Label();
+            btnSeleccion = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
             // 
             // cbxBuscar
             // 
-            this.cbxBuscar.FormattingEnabled = true;
-            this.cbxBuscar.Items.AddRange(new object[] {
-            "Nombre",
-            "Fecha",
-            "Monto",
-            "Detalle",
-            "Folio"});
-            this.cbxBuscar.Location = new System.Drawing.Point(12, 43);
-            this.cbxBuscar.Name = "cbxBuscar";
-            this.cbxBuscar.Size = new System.Drawing.Size(121, 23);
-            this.cbxBuscar.TabIndex = 0;
+            cbxBuscar.FormattingEnabled = true;
+            cbxBuscar.Items.AddRange(new object[] { "Nombre", "Fecha", "Monto", "Detalle", "Folio" });
+            cbxBuscar.Location = new Point(12, 43);
+            cbxBuscar.Name = "cbxBuscar";
+            cbxBuscar.Size = new Size(121, 23);
+            cbxBuscar.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Buscar por:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Buscar por:";
             // 
             // btnSeleccion
             // 
-            this.btnSeleccion.Location = new System.Drawing.Point(151, 42);
-            this.btnSeleccion.Name = "btnSeleccion";
-            this.btnSeleccion.Size = new System.Drawing.Size(75, 23);
-            this.btnSeleccion.TabIndex = 2;
-            this.btnSeleccion.Text = "Seleccionar";
-            this.btnSeleccion.UseVisualStyleBackColor = true;
-            this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
+            btnSeleccion.Location = new Point(151, 42);
+            btnSeleccion.Name = "btnSeleccion";
+            btnSeleccion.Size = new Size(75, 23);
+            btnSeleccion.TabIndex = 2;
+            btnSeleccion.Text = "Seleccionar";
+            btnSeleccion.UseVisualStyleBackColor = true;
+            btnSeleccion.Click += btnSeleccion_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(232, 42);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.Location = new Point(232, 42);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 3;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // Buscar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 81);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSeleccion);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbxBuscar);
-            this.Name = "Buscar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar";
-            this.Load += new System.EventHandler(this.Buscar_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(319, 81);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSeleccion);
+            Controls.Add(label1);
+            Controls.Add(cbxBuscar);
+            Name = "Buscar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Buscar";
+            Load += Buscar_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

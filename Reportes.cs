@@ -31,7 +31,7 @@ namespace SistemaControlChequesRev2
                         if (resultadoCheques == null)
                         {
                             resultadoCheques = new ResultadoCheques();
-                            this.Hide();
+                            this.Close();
                             resultadoCheques.Show();
                         }
                         else
@@ -46,7 +46,7 @@ namespace SistemaControlChequesRev2
                         if (general == null)
                         {
                             general = new General();
-                            this.Hide();
+                            this.Close();
                             general.Show();
 
                         }
@@ -62,7 +62,7 @@ namespace SistemaControlChequesRev2
                         if (estadoDeCuenta == null)
                         {
                             estadoDeCuenta = new EstadoDecuenta();
-                            this.Hide();
+                            this.Close();
                             estadoDeCuenta.Show();
                         }
                         else

@@ -36,6 +36,7 @@
             pictureBox3 = new PictureBox();
             linkLabel1 = new LinkLabel();
             btnLogin = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -104,11 +105,20 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click_1;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(252, 135);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(358, 463);
+            Controls.Add(dateTimePicker1);
             Controls.Add(btnLogin);
             Controls.Add(linkLabel1);
             Controls.Add(pictureBox3);
@@ -135,5 +145,6 @@
         private PictureBox pictureBox3;
         private LinkLabel linkLabel1;
         private Button btnLogin;
+        private DateTimePicker dateTimePicker1;
     }
 }

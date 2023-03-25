@@ -32,7 +32,7 @@ namespace SistemaControlChequesRev2
             string mes = dateTimePicker1.Value.ToString("MM");
             string anio = dateTimePicker1.Value.ToString("yyyy");
 
-            fecha = "'"+anio+"-"+mes+"-"+dia+"'";
+            fecha = "'" + anio + "-" + mes + "-" + dia + "'";
 
             BusquedaGeneral busquedaGeneral = new BusquedaGeneral();
             this.Dispose();
