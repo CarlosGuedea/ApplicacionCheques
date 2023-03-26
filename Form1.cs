@@ -35,7 +35,7 @@ namespace SistemaControlChequesRev2
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            
+
 
             //Obtener los datos del front-end
             String Usuario = txtUser.Text;
