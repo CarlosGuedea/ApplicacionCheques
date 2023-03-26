@@ -32,7 +32,6 @@
             btnExpedirCheque = new Button();
             btnBuscar = new Button();
             btnDeposito = new Button();
-            btnFolios = new Button();
             btnReportes = new Button();
             btnLogout = new Button();
             pictureBox1 = new PictureBox();
@@ -69,19 +68,9 @@
             btnDeposito.UseVisualStyleBackColor = true;
             btnDeposito.Click += btnDeposito_Click;
             // 
-            // btnFolios
-            // 
-            btnFolios.Location = new Point(492, 264);
-            btnFolios.Name = "btnFolios";
-            btnFolios.Size = new Size(146, 67);
-            btnFolios.TabIndex = 3;
-            btnFolios.Text = "Folios";
-            btnFolios.UseVisualStyleBackColor = true;
-            btnFolios.Click += btnFolios_Click;
-            // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(644, 264);
+            btnReportes.Location = new Point(492, 264);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(146, 67);
             btnReportes.TabIndex = 4;
@@ -91,7 +80,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(824, 272);
+            btnLogout.Location = new Point(644, 272);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(66, 50);
             btnLogout.TabIndex = 5;
@@ -102,7 +91,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(273, 3);
+            pictureBox1.Location = new Point(188, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(354, 246);
             pictureBox1.TabIndex = 6;
@@ -113,11 +102,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(930, 346);
+            ClientSize = new Size(747, 346);
             Controls.Add(pictureBox1);
             Controls.Add(btnLogout);
             Controls.Add(btnReportes);
-            Controls.Add(btnFolios);
             Controls.Add(btnDeposito);
             Controls.Add(btnBuscar);
             Controls.Add(btnExpedirCheque);
@@ -134,7 +122,6 @@
         private Button btnExpedirCheque;
         private Button btnBuscar;
         private Button btnDeposito;
-        private Button btnFolios;
         private Button btnReportes;
         private Button btnLogout;
         private PictureBox pictureBox1;

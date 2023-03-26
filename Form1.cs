@@ -35,9 +35,8 @@ namespace SistemaControlChequesRev2
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            PrincipalMenu principalMenu = new PrincipalMenu();
-            this.Hide();
-            principalMenu.ShowDialog();/*
+            
+
             //Obtener los datos del front-end
             String Usuario = txtUser.Text;
             String Contraseña = txtPass.Text;
@@ -75,7 +74,7 @@ namespace SistemaControlChequesRev2
                     else
                     {
                         // Si las credenciales son incorrectas, se muestra un mensaje de error
-                        MessageBox.Show("Credenciales incorrectas. Por favor, inténtelo de nuevo.");
+                        //MessageBox.Show("Credenciales incorrectas. Por favor, inténtelo de nuevo.");
                     }
                 }
 
@@ -85,7 +84,7 @@ namespace SistemaControlChequesRev2
             catch (Exception ex)
             {
                 MessageBox.Show(ex + "Error no se pudo conectar a la base de datos");
-            }*/
+            }
         }
     }
 }
