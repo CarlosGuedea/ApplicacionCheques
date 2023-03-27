@@ -1,9 +1,11 @@
-﻿using System;
+﻿using RawPrint;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +17,7 @@ namespace SistemaControlChequesRev2
     {
         //Se recupera el tipo de consulta que se va a hacer
         string tipo;
-        
+
         public ResultadoGeneral()
         {
             InitializeComponent();
@@ -24,19 +26,24 @@ namespace SistemaControlChequesRev2
             if (ReporteFolio.tipo != null)
             {
                 tipo = ReporteFolio.tipo;
-            }else if(ReporteNombre.tipo!=null){
-                tipo=ReporteNombre.tipo;
-            }else if (ReporteMonto.tipo != null)
+            }
+            else if (ReporteNombre.tipo != null)
             {
-                tipo=ReporteMonto.tipo;
-            }else if(ReporteDetalle.tipo != null)
+                tipo = ReporteNombre.tipo;
+            }
+            else if (ReporteMonto.tipo != null)
+            {
+                tipo = ReporteMonto.tipo;
+            }
+            else if (ReporteDetalle.tipo != null)
             {
                 tipo = ReporteDetalle.tipo;
-            }else if(ReporteFecha.tipo != null)
+            }
+            else if (ReporteFecha.tipo != null)
             {
                 tipo = ReporteFecha.tipo;
             }
-            
+
             llenaCampos();
         }
 
@@ -65,7 +72,7 @@ namespace SistemaControlChequesRev2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void llenaCampos()
@@ -111,7 +118,7 @@ namespace SistemaControlChequesRev2
                         }
                         break;
                     case "Beneficiario":
-                        String Sql2 = "Select * from Cheque where " + tipo + " like " + "'%"+RepoNombre+"%'";
+                        String Sql2 = "Select * from Cheque where " + tipo + " like " + "'%" + RepoNombre + "%'";
                         SqlCommand command2 = new SqlCommand(Sql2, conexion);
                         command2.CommandType = System.Data.CommandType.Text;
                         SqlDataReader reader2;
@@ -149,7 +156,7 @@ namespace SistemaControlChequesRev2
                         }
                         break;
                     case "Fecha_Emision":
-                        String Sql4 = "Select * from Cheque where " + tipo + " between " + Fecha1 + " and "+ Fecha2;
+                        String Sql4 = "Select * from Cheque where " + tipo + " between " + Fecha1 + " and " + Fecha2;
                         SqlCommand command4 = new SqlCommand(Sql4, conexion);
                         command4.CommandType = System.Data.CommandType.Text;
                         SqlDataReader reader4;
@@ -168,7 +175,7 @@ namespace SistemaControlChequesRev2
                         }
                         break;
                     case "Detalle":
-                        String Sql5 = "Select * from Cheque where " + tipo + " like " + "'%"+Detalle+"%'";
+                        String Sql5 = "Select * from Cheque where " + tipo + " like " + "'%" + Detalle + "%'";
                         SqlCommand command5 = new SqlCommand(Sql5, conexion);
                         command5.CommandType = System.Data.CommandType.Text;
                         SqlDataReader reader5;
@@ -195,6 +202,45 @@ namespace SistemaControlChequesRev2
             {
                 MessageBox.Show(ex + "Error no se pudo conectar a la base de datos");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+
+            // Establecer la impresora predeterminada en "Microsoft Print to PDF"
+            printDialog.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+
+            // Mostrar el cuadro de diálogo de impresión
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Crear una instancia del controlador de impresión
+                PrintDocument printDocument = new PrintDocument();
+
+                // Establecer el nombre del documento a imprimir
+                printDocument.DocumentName = "MiDocumento";
+
+                // Asignar la configuración de impresora seleccionada al controlador de impresión
+                printDocument.PrinterSettings = printDialog.PrinterSettings;
+
+                // Asignar el controlador de impresión al evento PrintPage para generar la salida
+                printDocument.PrintPage += new PrintPageEventHandler(PrintPage);
+
+                // Imprimir el documento en un archivo PDF
+                printDocument.Print();
+            }
+        }
+
+        private void PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Crear un objeto Bitmap del tamaño de la vista actual
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+
+            // Dibujar la vista actual en el objeto Bitmap
+            this.DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
+
+            // Dibujar el objeto Bitmap en la página de impresión
+            e.Graphics.DrawImage(bitmap, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
         }
     }
 }

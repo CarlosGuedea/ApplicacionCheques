@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
             Folio = new DataGridViewTextBoxColumn();
             Beneficiario = new DataGridViewTextBoxColumn();
             Monto = new DataGridViewTextBoxColumn();
             Fecha_Emision = new DataGridViewTextBoxColumn();
             Detalle = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -49,25 +49,6 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(776, 361);
             dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(600, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 23);
-            button1.TabIndex = 1;
-            button1.Text = "PDF";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(688, 23);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 23);
-            button2.TabIndex = 2;
-            button2.Text = "<-- Regresar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // Folio
             // 
@@ -93,6 +74,26 @@
             // 
             Detalle.HeaderText = "Detalle";
             Detalle.Name = "Detalle";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(600, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(82, 23);
+            button1.TabIndex = 1;
+            button1.Text = "PDF";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(688, 23);
+            button2.Name = "button2";
+            button2.Size = new Size(89, 23);
+            button2.TabIndex = 2;
+            button2.Text = "<-- Regresar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // BusquedaGeneral
             // 

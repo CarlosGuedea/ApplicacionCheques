@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SistemaControlChequesRev2
 {
     public partial class BusquedaGeneral : Form
     {
+
         string busqueda;
         public BusquedaGeneral()
         {
@@ -187,6 +189,43 @@ namespace SistemaControlChequesRev2
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
 
+            // Establecer la impresora predeterminada en "Microsoft Print to PDF"
+            printDialog.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+
+            // Mostrar el cuadro de diálogo de impresión
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Crear una instancia del controlador de impresión
+                PrintDocument printDocument = new PrintDocument();
+
+                // Establecer el nombre del documento a imprimir
+                printDocument.DocumentName = "MiDocumento";
+
+                // Asignar la configuración de impresora seleccionada al controlador de impresión
+                printDocument.PrinterSettings = printDialog.PrinterSettings;
+
+                // Asignar el controlador de impresión al evento PrintPage para generar la salida
+                printDocument.PrintPage += new PrintPageEventHandler(PrintPage);
+
+                // Imprimir el documento en un archivo PDF
+                printDocument.Print();
+            }
+
+            private void PrintPage(object sender, PrintPageEventArgs e)
+            {
+                // Crear un objeto Bitmap del tamaño de la vista actual
+                Bitmap bitmap = new Bitmap(this.Width, this.Height);
+
+                // Dibujar la vista actual en el objeto Bitmap
+                this.DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
+
+                // Dibujar el objeto Bitmap en la página de impresión
+                e.Graphics.DrawImage(bitmap, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
+            }
+        }
     }
 }
